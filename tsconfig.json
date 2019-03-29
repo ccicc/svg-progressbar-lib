@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "svg-progressbar-lib": [
+        "dist/svg-progressbar-lib"
+      ],
+      "svg-progressbar-lib/*": [
+        "dist/svg-progressbar-lib/*"
+      ]
+    }
   }
 }
