@@ -1,9 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SvgProgressbarLibService {
-
-  constructor() { }
+  public constructor() {}
 }
