@@ -1,0 +1,24 @@
+<!-- 原理图 -->
+
+<svg width="400" height="400"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <pattern id="grid" x="0" y="0" width="20" height="20"
+      patternUnits="userSpaceOnUse">
+      <path d="M 0 0 H 20 V 20"
+         fill="none" stroke="red" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect x="0" y="0" width="400" height="400" fill="url(#grid)"/>
+
+  <circle cx="200" cy="200" r="95"
+    fill="red" fill-opacity="0.5"
+    stroke="blue" stroke-width="10" stroke-opacity="0.5"
+  />
+
+  <path d="M 105 206 A 95 95 0 0 0 295 195"
+     fill="none" stroke="yellow" stroke-width="10" stroke-opacity="0.6"
+  />
+</svg>
