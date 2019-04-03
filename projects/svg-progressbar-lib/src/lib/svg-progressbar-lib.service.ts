@@ -38,7 +38,7 @@ export class SvgProgressbarLibService {
     total: number,
     radius: number,
     circleRadius: number,
-    semicycle: boolean
+    semicycle: boolean = false
   ): string {
     const value = Math.max(0, Math.min(currValue || 0, total));
     const maxAngle = semicycle ? 180 : 360;
@@ -56,7 +56,7 @@ export class SvgProgressbarLibService {
    * @param degress       当前角度值
    */
   private _getCoordinate(radius: number, circleRadius: number, degress: number): string {
-    const radians = this._DEGREES_TO_RADIANS * (degress - 90); // 从最左边开始
+    const radians = this._DEGREES_TO_RADIANS * (degress - 90);
     const cx = radius + circleRadius * Math.cos(radians);
     const cy = radius + circleRadius * Math.sin(radians);
     return cx + ' ' + cy;

@@ -1,9 +1,8 @@
-/* tslint:disable variable-name typedef-whitespace */
+/* tslint:disable variable-name */
 
 import {
   Component,
   Inject,
-  OnInit,
   OnChanges,
   Input,
   HostBinding,
@@ -23,8 +22,7 @@ import { SvgProgressbarLibEase } from './svg-progressbar-lib.ease';
 @Component({
   selector: 'nlq-svg-progressbar-lib',
   templateUrl: './svg-progressbar-lib.component.html',
-  styleUrls: ['./svg-progressbar-lib.component.scss'],
-  providers: []
+  styleUrls: ['./svg-progressbar-lib.component.scss']
 })
 export class SvgProgressbarLibComponent implements OnChanges {
   @Output() public valueChanged: EventEmitter<number> = new EventEmitter<number>();
@@ -74,7 +72,7 @@ export class SvgProgressbarLibComponent implements OnChanges {
     return `0 0 ${diameter} ${this.semicycle ? this.radius : diameter}`;
   }
 
-  private get _diameter() {
+  private get _diameter(): number {
     return this.radius * 2;
   }
 
@@ -108,7 +106,7 @@ export class SvgProgressbarLibComponent implements OnChanges {
   }
 
   /** 通过缓动函数更新path元素路径 */
-  private _animateChange(prev: number, curr: number) {
+  private _animateChange(prev: number, curr: number): void {
     if (typeof prev !== 'number') {
       prev = 0;
     }
@@ -143,7 +141,7 @@ export class SvgProgressbarLibComponent implements OnChanges {
     });
   }
 
-  private _clamp(value: number) {
+  private _clamp(value: number): number {
     return Math.max(0, Math.min(value || 0, this.total));
   }
 
