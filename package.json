@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "npm-run-all build:* run:tester",
+    "test": "npm-run-all test:*",
+    "build": "npm-run-all build:*",
     "run:tester": "ng serve svg-progressbar-tester",
     "build:lib": "ng build svg-progressbar-lib",
     "build:tester": "ng build svg-progressbar-tester",
-    "test": "npm-run-all test:*",
     "test:lib": "ng test svg-progressbar-lib",
     "test:tester": "ng test svg-progressbar-tester",
     "lint": "ng lint",

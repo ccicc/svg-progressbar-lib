@@ -1,4 +1,4 @@
-import { DebugElement } from '@angular/core';
+import { DebugElement, SimpleChanges, SimpleChange } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
@@ -21,8 +21,8 @@ describe('SvgProgressbarLibComponent', () => {
       providers: [
         SvgProgressbarLibComponent,
         SVG_PROGRESSBAR_LIB_PROVIDER,
-        { provide: SvgProgressbarLibService },
-        { provide: SvgProgressbarLibEase }
+        { provide: SvgProgressbarLibService, useClass: SvgProgressbarLibService },
+        { provide: SvgProgressbarLibEase, useClass: SvgProgressbarLibEase }
       ]
     }).compileComponents();
   }));
