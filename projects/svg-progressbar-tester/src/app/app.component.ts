@@ -1,15 +1,10 @@
-import { Component, OnInit, Type } from '@angular/core';
+/* tslint:disable variable-name */
+
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: []
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'svg-progressbar-tester';
-
-  public constructor() {}
-
-  public ngOnInit() { }
-}
+export class AppComponent {}

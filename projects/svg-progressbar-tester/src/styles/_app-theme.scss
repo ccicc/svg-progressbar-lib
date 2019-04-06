@@ -1,0 +1,14 @@
+@import './../../../../node_modules/@angular/material/theming';
+
+@import './../app/pages/navbar/navbar.theme';
+
+
+@mixin material-app-theme($theme) {
+  $primary: map_get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  @include navbar-theme($theme);
+}

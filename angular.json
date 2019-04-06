@@ -58,7 +58,7 @@
               "projects/svg-progressbar-tester/src/assets"
             ],
             "styles": [
-              "projects/svg-progressbar-tester/src/styles.css"
+              "projects/svg-progressbar-tester/src/styles.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
