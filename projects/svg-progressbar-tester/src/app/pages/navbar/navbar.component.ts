@@ -1,6 +1,8 @@
 import { NgModule, Component, OnInit, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatIconModule } from '@angular/material';
+
+import { ThemePickerModule } from './../theme-picker/theme-picker.component';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +18,7 @@ export class NavbarComponent implements OnInit {
 
 @NgModule({
   declarations: [NavbarComponent],
-  imports: [CommonModule, MatButtonModule],
+  imports: [CommonModule, MatIconModule, MatButtonModule, ThemePickerModule],
   exports: [NavbarComponent]
 })
 export class NavbarModule {}

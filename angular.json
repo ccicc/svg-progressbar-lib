@@ -58,7 +58,8 @@
               "projects/svg-progressbar-tester/src/assets"
             ],
             "styles": [
-              "projects/svg-progressbar-tester/src/styles.scss"
+              "projects/svg-progressbar-tester/src/styles.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -115,7 +116,8 @@
             "tsConfig": "projects/svg-progressbar-tester/tsconfig.spec.json",
             "karmaConfig": "projects/svg-progressbar-tester/karma.conf.js",
             "styles": [
-              "projects/svg-progressbar-tester/src/styles.css"
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "projects/svg-progressbar-tester/src/styles.scss"
             ],
             "scripts": [],
             "assets": [

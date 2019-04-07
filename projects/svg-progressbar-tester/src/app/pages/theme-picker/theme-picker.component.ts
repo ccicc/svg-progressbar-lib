@@ -15,7 +15,7 @@ export class ThemePickerComponent implements OnInit {
 
 @NgModule({
   declarations: [ThemePickerComponent],
-  imports: [MatButtonModule, MatMenuModule],
+  imports: [CommonModule, MatButtonModule, MatMenuModule],
   exports: [ThemePickerComponent]
 })
 export class ThemePickerModule {}
