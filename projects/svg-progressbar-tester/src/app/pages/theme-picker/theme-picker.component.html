@@ -1,1 +1,14 @@
-<button mat-icon-button>test</button>
+<a mat-icon-button matTooltip="选择一个主题!" [matMenuTriggerFor]="themeMenu">
+  <mat-icon fontIcon="fa-eyedropper" class="theme-picker-icon"></mat-icon>
+</a>
+
+<mat-menu #themeMenu="matMenu" class="theme-picker-menu">
+  <mat-grid-list cols="2">
+    <mat-grid-tile *ngFor="let theme of themes">
+      <div mat-menu-item (click)="selectTheme(theme.name)">
+        <div class="theme-item" [style.background]="theme?.primary"></div>
+          <mat-icon *ngIf="theme?.name === currentTheme?.name" class="theme-item-icon" fontIcon="fa-tint"></mat-icon>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-menu>

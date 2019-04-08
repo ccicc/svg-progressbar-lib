@@ -6,13 +6,30 @@
 }
 
 .tester-navbar {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
     padding: 10px 16px;
 }
 
 .navbar-header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
   width: 60%;
   margin: 0 auto;
+}
+
+.navbar-spacer {
+  flex-grow: 1;
+}
+
+.navbar-library-logo {
+  width: inherit;
+  height: inherit;
+  font-size: 30px;
+  margin-right: 5px;
+}
+
+@media only screen and (max-width: 720px) {
+  .navbar-header {
+    width: 100%;
+  }
 }

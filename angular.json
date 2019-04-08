@@ -31,9 +31,7 @@
               "projects/svg-progressbar-lib/tsconfig.lib.json",
               "projects/svg-progressbar-lib/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -48,18 +46,47 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/svg-progressbar-tester",
             "index": "projects/svg-progressbar-tester/src/index.html",
             "main": "projects/svg-progressbar-tester/src/main.ts",
             "polyfills": "projects/svg-progressbar-tester/src/polyfills.ts",
             "tsConfig": "projects/svg-progressbar-tester/tsconfig.app.json",
             "assets": [
-              "projects/svg-progressbar-tester/src/favicon.ico",
-              "projects/svg-progressbar-tester/src/assets"
+              {
+                "input": "projects/svg-progressbar-tester/src",
+                "output": "/",
+                "glob": "favicon.ico"
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets",
+                "output": "assets/",
+                "glob": "**/*"
+              }
             ],
             "styles": [
               "projects/svg-progressbar-tester/src/styles.scss",
-              "node_modules/font-awesome/scss/font-awesome.scss"
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/amber-brown.scss",
+                "bundleName": "assets/themes/amber-brown",
+                "lazy": true
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/blue-deepPurple.scss",
+                "bundleName": "assets/themes/blue-deepPurple",
+                "lazy": true
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/bluegrey-amber.scss",
+                "bundleName": "assets/themes/bluegrey-amber",
+                "lazy": true
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/teal-green.scss",
+                "bundleName": "assets/themes/teal-green",
+                "lazy": true
+              }
             ],
             "scripts": [],
             "es5BrowserSupport": true
@@ -117,13 +144,30 @@
             "karmaConfig": "projects/svg-progressbar-tester/karma.conf.js",
             "styles": [
               "node_modules/font-awesome/scss/font-awesome.scss",
-              "projects/svg-progressbar-tester/src/styles.scss"
+              "projects/svg-progressbar-tester/src/styles.scss",
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/amber-brown.scss",
+                "bundleName": "assets/themes/amber-brown",
+                "lazy": true
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/blue-deepPurple.scss",
+                "bundleName": "assets/themes/blue-deepPurple",
+                "lazy": true
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/bluegrey-amber.scss",
+                "bundleName": "assets/themes/bluegrey-amber",
+                "lazy": true
+              },
+              {
+                "input": "projects/svg-progressbar-tester/src/assets/themes/teal-green.scss",
+                "bundleName": "assets/themes/teal-green",
+                "lazy": true
+              }
             ],
             "scripts": [],
-            "assets": [
-              "projects/svg-progressbar-tester/src/favicon.ico",
-              "projects/svg-progressbar-tester/src/assets"
-            ]
+            "assets": ["projects/svg-progressbar-tester/src/favicon.ico", "projects/svg-progressbar-tester/src/assets"]
           }
         },
         "lint": {
@@ -133,9 +177,7 @@
               "projects/svg-progressbar-tester/tsconfig.app.json",
               "projects/svg-progressbar-tester/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -161,9 +203,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "projects/svg-progressbar-tester-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }

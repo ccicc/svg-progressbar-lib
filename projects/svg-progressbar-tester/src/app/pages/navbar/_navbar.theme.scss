@@ -7,5 +7,6 @@
 
   app-navbar {
     background: mat-color($primary, default);
+    color: mat-color($primary, default-contrast);
   }
 }
