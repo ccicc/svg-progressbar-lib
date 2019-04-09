@@ -1,6 +1,6 @@
 @import './../../../../node_modules/@angular/material/theming';
 
-@import './../app/pages/navbar/navbar.theme';
+@import './../app/shared/navbar/navbar.theme';
 
 
 @mixin material-app-theme($theme) {

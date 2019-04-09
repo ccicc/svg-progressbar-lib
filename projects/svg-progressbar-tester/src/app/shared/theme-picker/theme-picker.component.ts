@@ -1,8 +1,6 @@
 /* tslint:disable variable-name */
 
-import { NgModule, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatMenuModule, MatIconModule, MatTooltipModule, MatGridListModule } from '@angular/material';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { TesterTheme, ThemeStorageService } from './theme-storage/theme-storage.service';
 import { StyleManagerService } from './style-manager/style-manager.service';
@@ -71,11 +69,3 @@ export class ThemePickerComponent implements OnInit {
     this._themeStorage.setThemeForStorage(this.currentTheme);
   }
 }
-
-@NgModule({
-  declarations: [ThemePickerComponent],
-  imports: [CommonModule, MatButtonModule, MatMenuModule, MatIconModule, MatTooltipModule, MatGridListModule],
-  exports: [ThemePickerComponent],
-  providers: [StyleManagerService, ThemeStorageService]
-})
-export class ThemePickerModule {}
