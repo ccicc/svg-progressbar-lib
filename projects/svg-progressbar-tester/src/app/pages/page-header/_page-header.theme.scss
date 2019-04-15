@@ -1,0 +1,14 @@
+@mixin page-header-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  app-page-header {
+    h1 {
+      background: mat-color($primary, default);
+      color: mat-color($primary, default-contrast);
+    }
+  }
+}

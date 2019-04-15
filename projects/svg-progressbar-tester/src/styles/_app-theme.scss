@@ -1,6 +1,8 @@
 @import './../../../../node_modules/@angular/material/theming';
 
 @import './../app/shared/navbar/navbar.theme';
+@import './../app/pages/page-header/_page-header.theme';
+@import './../app/pages/home-page/page-nav-list/page-nav-list.theme';
 
 
 @mixin material-app-theme($theme) {
@@ -11,4 +13,6 @@
   $background: map-get($theme, background);
 
   @include navbar-theme($theme);
+  @include page-header-theme($theme);
+  @include page-nav-list-theme($theme);
 }

@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconRegistry } from '@angular/material';
 
-import { AppRoutingModule } from './app-routing.module';
-import { SvgProgressbarLibModule } from 'svg-progressbar-lib';
+import { HomePageModule } from './pages/home-page/home-page.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, SvgProgressbarLibModule, NavbarModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HomePageModule, NavbarModule],
   providers: [],
   bootstrap: [AppComponent]
 })

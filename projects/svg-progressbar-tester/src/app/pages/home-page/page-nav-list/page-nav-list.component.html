@@ -1,0 +1,23 @@
+<div class="nav-list-container">
+  <nav class="nav-list">
+    <button
+      #navBtn="cdkAccordionItem"
+      mat-icon-button
+      cdkAccordionItem
+      class="nav-button"
+      expanded="true"
+      (click)="navBtn.toggle()"
+    >
+      svg-library
+      <mat-icon
+        class="nav-button-icon"
+        [fontIcon]="navBtn.expanded ? 'fa-angle-down' : 'fa-angle-up'"
+      ></mat-icon>
+    </button>
+    <ul [@navExpansion]="navBtn.expanded ? 'expanded' : 'collapsed'" class="nav-list-items">
+      <li><a href="##">11111</a></li>
+      <li><a href="##">22222</a></li>
+      <li><a href="##">33333</a></li>
+    </ul>
+  </nav>
+</div>
