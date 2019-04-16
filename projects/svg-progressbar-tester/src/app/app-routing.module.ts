@@ -4,8 +4,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
+import { CategoryListComponent } from './pages/page-nav-views/category-list/category-list.component';
+import { SvgProgressbarComponent } from './pages/page-nav-views/svg-progressbar/svg-progressbar.component';
+
 const APP_PAGE_ROUTES: Routes = [
-  { path: '', component: HomePageComponent, pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomePageComponent,
+    children: [
+      { path: '', redirectTo: 'categories', pathMatch: 'full' },
+      { path: 'categories', component: CategoryListComponent },
+      { path: 'svg-progressbar', component: SvgProgressbarComponent }
+    ]
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', component: NotFoundPageComponent }
 ];
 

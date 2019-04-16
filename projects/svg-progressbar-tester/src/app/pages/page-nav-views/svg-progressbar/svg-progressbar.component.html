@@ -1,0 +1,55 @@
+<div class="svg-progressbar">
+  <mat-card class="form-card">
+    <mat-card-title>Svg-Progressbar</mat-card-title>
+    <form [formGroup]="formConfig" class="config-form">
+      <div class="form-control-item">
+        <span>radius </span>
+        <mat-slider min="30" max="150" step="1" thumbLabel formControlName="radius"></mat-slider>
+      </div>
+      <div class="form-control-item">
+        <span>strokeWidth</span>
+        <mat-slider min="1" max="100" step="1" thumbLabel formControlName="strokeWidth"></mat-slider>
+      </div>
+      <mat-form-field appearance="standard">
+        <mat-label>currVal</mat-label>
+        <input type="text" matInput formControlName="currVal" required />
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>total</mat-label>
+        <input type="text" matInput formControlName="total" required />
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>duration</mat-label>
+        <input type="text" matInput formControlName="duration" required />
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>delay</mat-label>
+        <input type="text" matInput formControlName="delay" />
+      </mat-form-field>
+      <!-- <mat-form-field appearance="standard">
+        <mat-label>animation</mat-label>
+        <mat-select formControlName="animation">
+          <mat-option vlaue="linearEase">linearEae</mat-option>
+          <mat-option value="easeInQuad">easeInQuad</mat-option>
+        </mat-select>
+      </mat-form-field> -->
+      <mat-slide-toggle formControlName="semicycle">semicycle</mat-slide-toggle>
+      <mat-slide-toggle formControlName="rounded">rounded</mat-slide-toggle>
+      <mat-slide-toggle formControlName="clockwise">clockwie</mat-slide-toggle>
+    </form>
+  </mat-card>
+  <div class="progressbar-container">
+    <nlq-svg-progressbar-lib
+      [radius]="radius.value"
+      [currVal]="currVal.value"
+      [total]="total.value"
+      [strokeWidth]="strokeWidth.value"
+      [duration]="duration.value"
+      [delay]="delay.value"
+      [semicycle]="semicycle.value"
+      [rounded]="rounded.value"
+      [clockwise]="clockwise.value"
+      [animation]="'linearEase'"
+    ></nlq-svg-progressbar-lib>
+  </div>
+</div>
