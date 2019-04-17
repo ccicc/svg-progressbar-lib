@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatIconRegistry } from '@angular/material';
+import { MatIconRegistry, MatSelectModule } from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { HomePageModule } from './pages/home-page/home-page.module';
@@ -20,7 +20,8 @@ import { AppComponent } from './app.component';
     HomePageModule,
     NavbarModule,
     ReactiveFormsModule,
-    SvgProgressbarLibModule,
+    MatSelectModule,
+    SvgProgressbarLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

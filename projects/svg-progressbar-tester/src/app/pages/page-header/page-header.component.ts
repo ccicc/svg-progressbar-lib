@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterState } from '@angular/router';
+import { PageTitleService } from './../../services/page-title/page-title.service';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-page-header',
@@ -7,8 +8,13 @@ import { ActivatedRoute, Router, RouterState } from '@angular/router';
   styleUrls: ['./page-header.component.scss']
 })
 export class PageHeaderComponent implements OnInit {
-  public pageTitle: string;
-  constructor() {}
+  public pageTitle: string = '';
+  constructor(private titleService: PageTitleService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.titleService
+      .getTitle()
+      .pipe(delay(100))
+      .subscribe(title => (this.pageTitle = title));
+  }
 }

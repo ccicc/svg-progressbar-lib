@@ -1,55 +1,81 @@
-<div class="svg-progressbar">
-  <mat-card class="form-card">
-    <mat-card-title>Svg-Progressbar</mat-card-title>
-    <form [formGroup]="formConfig" class="config-form">
-      <div class="form-control-item">
-        <span>radius </span>
-        <mat-slider min="30" max="150" step="1" thumbLabel formControlName="radius"></mat-slider>
-      </div>
-      <div class="form-control-item">
-        <span>strokeWidth</span>
-        <mat-slider min="1" max="100" step="1" thumbLabel formControlName="strokeWidth"></mat-slider>
-      </div>
+<div class="root-container">
+  <div class="form-container">
+    <form [formGroup]="formConfig">
       <mat-form-field appearance="standard">
         <mat-label>currVal</mat-label>
-        <input type="text" matInput formControlName="currVal" required />
+        <input type="text" matInput formControlName="currVal" />
+        <mat-hint *ngIf="currVal?.invalid && currVal?.dirty">
+          请输入有效数值
+        </mat-hint>
       </mat-form-field>
       <mat-form-field appearance="standard">
         <mat-label>total</mat-label>
-        <input type="text" matInput formControlName="total" required />
+        <input type="text" matInput formControlName="total" />
+        <mat-hint *ngIf="total?.invalid && total.dirty">
+          请输入有效数值
+        </mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>radius</mat-label>
+        <input type="text" matInput formControlName="radius" />
+        <mat-hint *ngIf="radius?.invalid && radius?.dirty">请输入有效数值</mat-hint>
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>strokeWidth</mat-label>
+        <input type="text" matInput formControlName="strokeWidth" />
+        <mat-hint *ngIf="strokeWidth?.invalid && strokeWidth?.dirty">
+          请输入有效数值
+        </mat-hint>
       </mat-form-field>
       <mat-form-field appearance="standard">
         <mat-label>duration</mat-label>
-        <input type="text" matInput formControlName="duration" required />
+        <input type="text" matInput formControlName="duration" />
       </mat-form-field>
       <mat-form-field appearance="standard">
         <mat-label>delay</mat-label>
         <input type="text" matInput formControlName="delay" />
       </mat-form-field>
-      <!-- <mat-form-field appearance="standard">
-        <mat-label>animation</mat-label>
-        <mat-select formControlName="animation">
-          <mat-option vlaue="linearEase">linearEae</mat-option>
-          <mat-option value="easeInQuad">easeInQuad</mat-option>
-        </mat-select>
-      </mat-form-field> -->
       <mat-slide-toggle formControlName="semicycle">semicycle</mat-slide-toggle>
       <mat-slide-toggle formControlName="rounded">rounded</mat-slide-toggle>
-      <mat-slide-toggle formControlName="clockwise">clockwie</mat-slide-toggle>
+      <mat-slide-toggle formControlName="clockwise">clockwise</mat-slide-toggle>
+      <mat-form-field appearance="standard">
+        <mat-select formControlName="animation">
+          <mat-option value="linearEase">linearEaes</mat-option>
+          <mat-option value="easeOutQuad">easeOutQuad</mat-option>
+          <mat-option value="easeInOutQuad">easeInOutQuad</mat-option>
+          <mat-option value="easeInCubic">easeInCubic</mat-option>
+        </mat-select>
+      </mat-form-field>
     </form>
-  </mat-card>
-  <div class="progressbar-container">
-    <nlq-svg-progressbar-lib
-      [radius]="radius.value"
-      [currVal]="currVal.value"
-      [total]="total.value"
-      [strokeWidth]="strokeWidth.value"
-      [duration]="duration.value"
-      [delay]="delay.value"
-      [semicycle]="semicycle.value"
-      [rounded]="rounded.value"
-      [clockwise]="clockwise.value"
-      [animation]="'linearEase'"
-    ></nlq-svg-progressbar-lib>
+  </div>
+
+  <div class="svg-container">
+    <svg
+      width="100%"
+      height="100%"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <defs>
+        <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 0 0 H 20 V 20" fill="none" stroke="#ccc" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#grid)" stroke="#ccc" />
+    </svg>
+    <div class="progressbar-container">
+      <nlq-svg-progressbar-lib
+        [currVal]="currVal.valid ? +currVal.value : 0"
+        [total]="total.valid ? +total.value : 360"
+        [radius]="radius.valid ? +radius.value : 100"
+        [strokeWidth]="strokeWidth.valid ? strokeWidth.value : 10"
+        [duration]="duration.valid ? +duration.value : 10"
+        [semicycle]="semicycle?.value"
+        [rounded]="rounded?.value"
+        [clockwise]="clockwise?.value"
+        [animation]="animation?.value"
+      ></nlq-svg-progressbar-lib>
+    </div>
   </div>
 </div>

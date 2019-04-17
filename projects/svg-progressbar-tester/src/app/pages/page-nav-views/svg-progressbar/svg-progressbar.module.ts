@@ -9,17 +9,27 @@ import {
   MatSlideToggleModule,
   MatCardModule,
   MatSliderModule,
-  MatSelectModule,
-  MatOptionModule
+  MatSelectModule
 } from '@angular/material';
 
-import { SvgProgressbarLibModule, SVG_PROGRESSBAR_LIB_PROVIDER } from 'svg-progressbar-lib';
 import { SvgProgressbarComponent } from './svg-progressbar.component';
+import { SvgProgressbarLibModule, SVG_PROGRESSBAR_LIB_PROVIDER } from 'svg-progressbar-lib';
+import {
+  CheckIsNumberValidatorDirective,
+  CheckLessTotalValidatorDirective,
+  CheckLessRadiusValidatorDirective
+} from './directives/form-validators/form-validators.directive';
 
 @NgModule({
-  declarations: [SvgProgressbarComponent],
+  declarations: [
+    SvgProgressbarComponent,
+    CheckIsNumberValidatorDirective,
+    CheckLessTotalValidatorDirective,
+    CheckLessRadiusValidatorDirective
+  ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SvgProgressbarLibModule,
     MatButtonModule,
     MatFormFieldModule,
@@ -28,9 +38,7 @@ import { SvgProgressbarComponent } from './svg-progressbar.component';
     MatSlideToggleModule,
     MatCardModule,
     MatSliderModule,
-    MatSelectModule,
-    MatOptionModule,
-    ReactiveFormsModule
+    MatSelectModule
   ],
   providers: [SVG_PROGRESSBAR_LIB_PROVIDER]
 })

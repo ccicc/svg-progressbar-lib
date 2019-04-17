@@ -11,7 +11,7 @@ export interface SvgProgressbarLibConfig {
   clockwise: boolean; // 是否顺时针
   currVal: number; // 当前进度条值
   total: number; // 进度条结束值
-  duration: number; // 动画持续时间(s)
+  duration: number; // 动画持续时间(ms)
   animation: string; // 缓动函数
   delay: number; // 延迟时间
 }
@@ -27,7 +27,7 @@ export const SvgProgressbarLibDefaults: SvgProgressbarLibConfig = {
   clockwise: false,
   currVal: 60,
   total: 360,
-  duration: 3,
+  duration: 3000,
   animation: 'linearEase',
   delay: 0
 };

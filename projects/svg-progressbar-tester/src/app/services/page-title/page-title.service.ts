@@ -2,24 +2,24 @@
 
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PageTitleService {
-  private _title: string;
-  constructor(private bodyTitle: Title) {}
+  private _title: Subject<string> = new Subject();
 
-  public get title() {
+  public constructor(private bodyTitle: Title) {}
+
+  public getTitle() {
     return this._title;
   }
 
-  public set title(value: string) {
-    this._title = value;
-    this._updateTitle();
+  public setTitle(value: string) {
+    this._updateTile(value);
+    this._title.next(value);
   }
 
-  private _updateTitle(): void {
-    this.bodyTitle.setTitle(this._title);
+  private _updateTile(title: string) {
+    this.bodyTitle.setTitle(title);
   }
 }

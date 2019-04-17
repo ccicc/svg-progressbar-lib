@@ -13,8 +13,8 @@ const APP_PAGE_ROUTES: Routes = [
     component: HomePageComponent,
     children: [
       { path: '', redirectTo: 'categories', pathMatch: 'full' },
-      { path: 'categories', component: CategoryListComponent },
-      { path: 'svg-progressbar', component: SvgProgressbarComponent }
+      { path: 'categories', component: CategoryListComponent, data: { title: 'categories' } },
+      { path: 'svg-progressbar', component: SvgProgressbarComponent, data: { title: 'svg-progressbar' } }
     ]
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
