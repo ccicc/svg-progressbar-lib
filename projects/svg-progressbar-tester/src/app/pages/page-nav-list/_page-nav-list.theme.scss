@@ -1,0 +1,10 @@
+@mixin page-nav-list-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  app-page-nav-list {
+    .nav-list-items .active {
+      color: mat-color($primary, default);
+    }
+  }
+}

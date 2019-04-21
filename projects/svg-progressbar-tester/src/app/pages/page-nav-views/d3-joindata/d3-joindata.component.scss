@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.root-container {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1;
+  padding: 30px;
+
+  h1 {
+    font-family: Roboto-Bold;
+    font-size: 20px;
+  }
+
+  h2 {
+    font-family: Roboto-Bold;
+    color: #666;
+    font-size: 18px;
+  }
+}

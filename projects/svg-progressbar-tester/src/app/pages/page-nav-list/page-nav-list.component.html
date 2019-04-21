@@ -16,7 +16,7 @@
     </button>
     <ul [@navExpansion]="navBtn.expanded ? 'expanded' : 'collapsed'" class="nav-list-items">
       <li *ngFor="let navLink of navigation?.links">
-        <a [routerLink]="navLink.link">{{ navLink?.name }}</a>
+        <a [routerLink]="navLink.link" class="nav-item-link" routerLinkActive="active">{{ navLink?.name }}</a>
       </li>
     </ul>
     <hr *ngIf="!last">

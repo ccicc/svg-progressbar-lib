@@ -6,6 +6,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 
 import { CategoryListComponent } from './pages/page-nav-views/category-list/category-list.component';
 import { SvgProgressbarComponent } from './pages/page-nav-views/svg-progressbar/svg-progressbar.component';
+import { D3JoindataComponent } from './pages/page-nav-views/d3-joindata/d3-joindata.component';
 
 const APP_PAGE_ROUTES: Routes = [
   {
@@ -14,7 +15,8 @@ const APP_PAGE_ROUTES: Routes = [
     children: [
       { path: '', redirectTo: 'categories', pathMatch: 'full' },
       { path: 'categories', component: CategoryListComponent, data: { title: 'categories' } },
-      { path: 'svg-progressbar', component: SvgProgressbarComponent, data: { title: 'svg-progressbar' } }
+      { path: 'svg-progressbar', component: SvgProgressbarComponent, data: { title: 'svg-progressbar' } },
+      { path: 'd3-joindata', component: D3JoindataComponent, data: { title: 'd3-joindata' } }
     ]
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

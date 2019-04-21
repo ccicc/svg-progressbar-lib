@@ -8,6 +8,10 @@
 
 .nav-list {
   color: rgba(0, 0, 0, 0.5);
+
+  hr {
+    margin: 0;
+  }
 }
 
 .nav-button {
@@ -37,9 +41,14 @@
   li {
     padding-bottom: 10px;
   }
+}
 
-  a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
+.nav-item-link {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
   }
 }

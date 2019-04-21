@@ -1,0 +1,21 @@
+@mixin d3-joindata-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  app-d3-joindata {
+    svg {
+      text {
+        font-family: Roboto-Bold;
+        font-size: 24px;
+      }
+    }
+
+    .enter {
+      fill: mat-color($primary, default);
+    }
+
+    .update {
+      fill: mat-color($accent, default);
+    }
+  }
+}
