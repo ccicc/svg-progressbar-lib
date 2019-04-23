@@ -1,0 +1,22 @@
+@mixin d3-shuffle-a-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  app-d3-shuffle-a {
+    .play{
+      path {
+        cursor: pointer;
+        fill: mat-color($primary, default);
+        &:hover {
+          fill: mat-color($accent, default);
+        }
+      }
+    }
+
+    .svg-container {
+      text {
+        fill: mat-color($primary, default);
+      }
+    }
+  }
+}

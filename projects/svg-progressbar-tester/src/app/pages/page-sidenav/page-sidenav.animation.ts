@@ -11,7 +11,8 @@ import {
 
 export const sidenavAnimation = trigger('fadeInOut', [
   transition(
-    'categories <=> svg-progressbar,d3-joindata <=> svg-progressbar,d3-joindata <=> categories',
+    `categories <=> svg-progressbar, d3-joindata <=> svg-progressbar, d3-joindata <=> categories,` +
+      `d3-shuffle-a <=> svg-progressbar, d3-shuffle-a <=> categories, d3-shuffle-a <=> d3-joindata`,
     [
       style({ position: 'relative' }),
       query(

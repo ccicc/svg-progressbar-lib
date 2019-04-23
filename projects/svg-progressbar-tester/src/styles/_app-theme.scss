@@ -4,6 +4,7 @@
 @import './../app/pages/page-header/_page-header.theme';
 @import './../app/pages/page-nav-list/page-nav-list.theme';
 @import './../app/pages/page-nav-views/d3-joindata/d3-joindata.theme';
+@import './../app/pages/page-nav-views/d3-shuffle-a/_d3-shuffle-a.theme';
 
 
 @mixin material-app-theme($theme) {
@@ -17,4 +18,5 @@
   @include page-header-theme($theme);
   @include page-nav-list-theme($theme);
   @include d3-joindata-theme($theme);
+  @include d3-shuffle-a-theme($theme);
 }

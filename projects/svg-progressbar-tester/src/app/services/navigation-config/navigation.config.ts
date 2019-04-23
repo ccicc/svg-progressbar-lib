@@ -18,7 +18,10 @@ export const navigationConfig: Array<NavigationItem> = [
   },
   {
     title: 'd3',
-    links: [{ name: 'd3-joindata', link: './d3-joindata' }]
+    links: [
+      { name: 'd3-joindata', link: './d3-joindata' },
+      { name: 'd3-shuffle-a', link: './d3-shuffle-a' }
+    ]
   }
 ];
 
