@@ -3,10 +3,15 @@
   $accent: map-get($theme, accent);
 
   app-d3-joindata {
-    svg {
+    .svg-container {
+
       text {
         font-family: Roboto-Bold;
         font-size: 24px;
+      }
+
+      p {
+        color: mat-color($primary, default);
       }
     }
 
@@ -16,6 +21,19 @@
 
     .update {
       fill: mat-color($accent, default);
+    }
+
+    .text-container p {
+      font-family: Roboto-Bold;
+      font-size: 24px;
+    }
+
+    .text-fade {
+      position: relative;
+
+      p {
+        position: absolute;
+      }
     }
   }
 }
