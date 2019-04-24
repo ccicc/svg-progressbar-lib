@@ -67,6 +67,7 @@
             "styles": [
               "projects/svg-progressbar-tester/src/styles.scss",
               "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/highlight.js/styles/rainbow.css",
               {
                 "input": "projects/svg-progressbar-tester/src/assets/themes/amber-brown.scss",
                 "bundleName": "assets/themes/amber-brown",

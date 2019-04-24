@@ -3,7 +3,14 @@
   $accent: map-get($theme, accent);
 
   app-d3-joindata {
+    .root-title {
+      color: mat-color($primary, default);
+    }
+
     .svg-container {
+      svg {
+        background: #eee;
+      }
 
       text {
         font-family: Roboto-Bold;

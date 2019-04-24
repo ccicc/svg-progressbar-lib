@@ -3,19 +3,27 @@
   $accent: map-get($theme, accent);
 
   app-d3-shuffle-a {
-    .play{
-      path {
-        cursor: pointer;
-        fill: mat-color($primary, default);
-        &:hover {
-          fill: mat-color($accent, default);
-        }
-      }
+    .root-title {
+      color: mat-color($primary, default);
     }
 
     .svg-container {
       text {
         fill: mat-color($primary, default);
+      }
+    }
+
+    .code-container {
+      border-left: 8px solid mat-color($primary, default);
+    }
+
+    .play path,
+    .restart circle {
+      cursor: pointer;
+      fill: mat-color($primary, default);
+
+      &:hover {
+        fill: mat-color($accent, default);
       }
     }
   }
