@@ -1,6 +1,6 @@
 {
   "name": "svg-progressbar-lib",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "npm-run-all build:* run:tester",
@@ -8,9 +8,10 @@
     "build": "npm-run-all build:*",
     "run:tester": "ng serve svg-progressbar-tester",
     "build:lib": "ng build svg-progressbar-lib",
-    "build:tester": "ng build svg-progressbar-tester --base-href=/svg-progressbar-tester",
+    "build:tester": "ng build svg-progressbar-tester --prod --base-href=https://ccicc.github.io/svg-progressbar-lib/svg-progressbar-tester",
     "test:lib": "ng test svg-progressbar-lib",
     "test:tester": "ng test svg-progressbar-tester",
+    "publish:tester": "npx ngh --dir=dist/svg-progressbar-tester",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
