@@ -1,6 +1,7 @@
 /* tslint:disable variable-name */
 
 import { Component, OnInit, OnDestroy, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
   active,
   format,
@@ -34,8 +35,11 @@ export class D3JoindataComponent implements OnInit, OnDestroy {
 
   private _alphabeta = 'abcdefghijklmnopqrstuvwxyz'.split('');
   private _unsubscription: Subscription;
+  public title: string;
 
-  constructor(private _renderer: Renderer2) {}
+  constructor(private _renderer: Renderer2, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.data.subscribe(data => this.title = data.title);
+  }
 
   public ngOnInit() {
     const svg1 = this._initSvg();
@@ -178,7 +182,7 @@ export class D3JoindataComponent implements OnInit, OnDestroy {
       .attr('width', '100%')
       .attr('height', 100)
       .attr('viewbox', `0 0 100% 100`)
-      .append('g')
+    .append('g')
       .attr('transform', 'translate(50, 50)');
     return svg;
   }
