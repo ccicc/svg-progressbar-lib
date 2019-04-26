@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PageTitleService } from './../../services/page-title/page-title.service';
+import { PageTitleService } from '../../shared/page-title/page-title.service';
 import { sidenavAnimation } from './page-sidenav.animation';
 
 @Component({

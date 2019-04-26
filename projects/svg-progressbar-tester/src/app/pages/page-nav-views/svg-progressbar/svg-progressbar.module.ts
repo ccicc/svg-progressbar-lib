@@ -18,7 +18,7 @@ import {
   CheckIsNumberValidatorDirective,
   CheckLessTotalValidatorDirective,
   CheckLessRadiusValidatorDirective
-} from './directives/form-validators/form-validators.directive';
+} from './form-validators/form-validators.directive';
 
 @NgModule({
   declarations: [

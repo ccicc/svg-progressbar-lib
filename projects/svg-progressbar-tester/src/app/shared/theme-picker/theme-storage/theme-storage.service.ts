@@ -1,6 +1,6 @@
 /* tslint:disable variable-name */
 
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, Optional, SkipSelf } from '@angular/core';
 
 export interface TesterTheme {
   name: string;
@@ -12,9 +12,14 @@ export interface TesterTheme {
 
 @Injectable()
 export class ThemeStorageService {
-  public constructor() {}
   private static namespace = 'tester-theme';
   public themeChanged: EventEmitter<TesterTheme> = new EventEmitter<TesterTheme>();
+
+  public constructor(@Optional() @SkipSelf() private _themeStorageService: ThemeStorageService) {
+    if (this._themeStorageService) {
+      throw new Error('ThemeStorageService repeated instantiation!');
+    }
+  }
 
   public setThemeForStorage(theme: TesterTheme): void {
     try {

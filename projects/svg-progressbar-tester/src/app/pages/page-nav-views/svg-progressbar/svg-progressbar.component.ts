@@ -6,7 +6,7 @@ import {
   checkIsNumberValidator,
   checkLessTotalValidator,
   checkLessRadiusValidator
-} from './directives/form-validators/form-validators.directive';
+} from './form-validators/form-validators.directive';
 
 @Component({
   selector: 'app-svg-progressbar',

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule, MatMenuModule, MatTooltipModule, MatGridListModule, MatIconModule } from '@angular/material';
 
@@ -10,7 +10,13 @@ import { ThemePickerComponent } from './theme-picker.component';
 @NgModule({
   declarations: [ThemePickerComponent],
   imports: [CommonModule, MatButtonModule, MatMenuModule, MatTooltipModule, MatGridListModule, MatIconModule],
-  exports: [ThemePickerComponent],
-  providers: [StyleManagerService, ThemeStorageService]
+  exports: [ThemePickerComponent]
 })
-export class ThemePickerModule {}
+export class ThemePickerModule {
+  public static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: ThemePickerModule,
+      providers: [StyleManagerService, ThemeStorageService]
+    };
+  }
+}

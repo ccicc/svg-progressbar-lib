@@ -1,14 +1,21 @@
 /* tslint:disable variable-name */
 
-import { Injectable } from '@angular/core';
+import { Injectable, Optional, SkipSelf } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class PageTitleService {
   private _title: Subject<string> = new Subject();
 
-  public constructor(private bodyTitle: Title) {}
+  public constructor(
+    private bodyTitle: Title,
+    @Optional() @SkipSelf() private _pageTitleService: PageTitleService
+  ) {
+    if (this._pageTitleService) {
+      throw new Error('PageTitleService repeated instantiation!');
+    }
+  }
 
   public getTitle() {
     return this._title;

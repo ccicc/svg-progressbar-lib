@@ -1,11 +1,18 @@
 /* tslint:disable variable-name */
 
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, Optional, SkipSelf } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable()
 export class StyleManagerService {
-  public constructor(@Inject(DOCUMENT) private _document: HTMLDocument) {}
+  public constructor(
+    @Inject(DOCUMENT) private _document: HTMLDocument,
+    @Optional() @SkipSelf() private _styleManagerService: StyleManagerService
+  ) {
+    if (this._styleManagerService) {
+      throw new Error('StyleManagerService repeated instantiation!');
+    }
+  }
 
   public setStyle(name: string, href: string): void {
     this._getStyleLinkElement(name).setAttribute('src', href);

@@ -1,11 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { trigger, state, style, animate, transition, query } from '@angular/animations';
-
-import {
-  NavigationItem,
-  NAVIGATION_CONFIG
-} from './../../services/navigation-config/navigation.config';
+import { NavigationItem, NAVIGATION_CONFIG } from '../../shared/navigation-config/navigation.config';
 
 @Component({
   selector: 'app-page-nav-list',
@@ -20,9 +15,7 @@ import {
   ]
 })
 export class PageNavListComponent implements OnInit {
-  constructor(
-    @Inject(NAVIGATION_CONFIG) public navConfig: Array<NavigationItem>
-  ) { }
+  constructor( @Inject(NAVIGATION_CONFIG) public navConfig: Array<NavigationItem>) { }
 
   ngOnInit() {}
 }
